@@ -1,4 +1,7 @@
-import './globals.css'
+"use client";
+import { ChakraProvider } from "@chakra-ui/react"
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 export const metadata = {
   title: 'Create Next App',
@@ -12,7 +15,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ChakraProvider>
+          <Header/>
+        {children}
+        <Footer/>
+        </ChakraProvider></body>
     </html>
   )
 }
